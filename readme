@@ -1,0 +1,17 @@
+message包是用来抽象多种信息发送的
+通过统一的发送接口发送多种数据，其他的数据发送需要接口实现MessageSender且将类配置到message.php中
+才可以发送时指定发送方法
+install
+1.添加命名空间解析，在composer.json中添加
+  "psr-4": {
+            "fglpk\\message\\": "vendor/fglpk/message/src/"
+  }
+  执行composer dump-autoload 解析
+2.在app.php中配置provider
+  fglpk\message\MessageServiceProvider::class,
+3.配置缩写facade
+  "Message" => fglpk\message\Facade::class,
+4.执行php artisan vendor:publish 将包中的文件移动
+
+5.事件的配置
+  将MessageSend的事件放到EventProvider中配置监听

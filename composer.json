@@ -1,0 +1,16 @@
+{
+    "name": "fglpk/message",
+    "description": "make the message send to email or mobile and so on",
+    "authors": [
+        {
+            "name": "jx3030",
+            "email": "jx3030@yeah.net"
+        }
+    ],
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "fglpk\\message\\": "src/"
+      }
+    }
+}
